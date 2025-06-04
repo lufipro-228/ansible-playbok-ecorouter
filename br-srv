@@ -3,7 +3,10 @@
 hq-srv ansible_ssh_user=sshuser ansible_port=2025
 br-srv ansible_ssh_user=sshuser ansible_port=2025
 [routers]
-hq-rtr ansible_user=net_admin ansible_password=P@ssw0rd ansible_connection=networ>
-br-rtr ansible_user=net_admin ansible_password=P@ssw0rd ansible_connection=networ>
+hq-rtr ansible_user=net_admin ansible_password=P@ssw0rd ansible_connection=network_cli ansible_network_os=ios
+br-rtr ansible_user=net_admin ansible_password=P@ssw0rd ansible_connection=network_cli ansible_network_os=ios
 [cli]
 hq-cli ansible_ssh_user=student
+
+[defaults]
+interpreter_python = /usr/bin/python3
